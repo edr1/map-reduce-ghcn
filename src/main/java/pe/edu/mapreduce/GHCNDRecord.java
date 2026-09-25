@@ -33,7 +33,8 @@ public final class GHCNDRecord {
     }
 
     public static GHCNDRecord parse(String line) throws IOException {
-        try (CSVParser parser = CSVFormat.DEFAULT.parse(new StringReader(line))) {
+        try {
+            CSVParser parser = CSVFormat.DEFAULT.parse(new StringReader(line));
             Iterator<CSVRecord> iterator = parser.iterator();
             if (!iterator.hasNext()) {
                 throw new IOException("Registro CSV vacío");
@@ -47,6 +48,9 @@ public final class GHCNDRecord {
             } catch (DateTimeParseException e) {
                 throw new IOException("Fecha inválida", e);
             }
+        } 
+        catch (Exception ex) {
+            throw new IOException("Formato inválido", ex);
         }
     }
 
