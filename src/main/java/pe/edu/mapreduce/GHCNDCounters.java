@@ -1,0 +1,13 @@
+package pe.edu.mapreduce;
+
+public enum GHCNDCounters {
+    HEADER,
+    MALFORMED_RECORD,
+    INVALID_DATE,
+    MISSING_TMAX,
+    MISSING_PRCP,
+    QUALITY_REJECTED_TMAX,
+    QUALITY_REJECTED_PRCP,
+    VALID_TMAX,
+    VALID_PRCP
+}
