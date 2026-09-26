@@ -10,6 +10,7 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.CombineTextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 /** Pregunta 3: mayor TMAX por año, con estación y fecha. */
@@ -92,6 +93,7 @@ public final class AnnualMaximumTemperatureJob {
     public static Job configure(Configuration conf, Path input, Path output) throws IOException {
         Job job = Job.getInstance(conf, "GHCND - máxima temperatura anual");
         job.setJarByClass(AnnualMaximumTemperatureJob.class);
+        job.setInputFormatClass(CombineTextInputFormat.class);
         job.setMapperClass(MaximumMapper.class);
         job.setCombinerClass(MaximumCombiner.class);
         job.setReducerClass(MaximumReducer.class);

@@ -12,6 +12,7 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+import org.apache.hadoop.mapreduce.lib.input.CombineTextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 
 /** Pregunta 2: precipitación acumulada por estación y mes. */
@@ -84,6 +85,7 @@ public final class MonthlyPrecipitationJob {
     public static Job configure(Configuration conf, Path input, Path output) throws IOException {
         Job job = Job.getInstance(conf, "GHCND - precipitación acumulada por estación y mes");
         job.setJarByClass(MonthlyPrecipitationJob.class);
+        job.setInputFormatClass(CombineTextInputFormat.class);
         job.setMapperClass(PrecipitationMapper.class);
         job.setCombinerClass(SumCombiner.class);
         job.setReducerClass(SumReducer.class);
