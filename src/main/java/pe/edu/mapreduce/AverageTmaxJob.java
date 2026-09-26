@@ -11,6 +11,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.apache.hadoop.mapreduce.lib.input.CombineTextInputFormat;
 
 /** Pregunta 1: temperatura máxima promedio por estación y año. */
 public final class AverageTmaxJob {
@@ -85,6 +86,7 @@ public final class AverageTmaxJob {
 
     public static Job configure(Configuration conf, Path input, Path output) throws IOException {
         Job job = Job.getInstance(conf, "GHCND - promedio TMAX por estación y año");
+        job.setInputFormatClass(CombineTextInputFormat.class);
         job.setJarByClass(AverageTmaxJob.class);
         job.setMapperClass(TmaxMapper.class);
         job.setCombinerClass(SumCountCombiner.class);

@@ -38,8 +38,7 @@ target/ghcnd-mapreduce-1.0.0.jar
 ## Ejecutar en Amazon EMR
 
 ```bash
-hadoop jar target/ghcnd-mapreduce-1.0.0.jar \
-  avg-tmax s3://BUCKET/noaa-ghcn/input/ s3://BUCKET/noaa-ghcn/output/avg-tmax
+hadoop jar target/ghcnd-mapreduce-1.0.0.jar avg-tmax s3://dataset-ghcn-2/input/ s3://dataset-ghcn-2/output/avg-tmax
 
 hadoop jar target/ghcnd-mapreduce-1.0.0.jar \
   monthly-prcp s3://BUCKET/noaa-ghcn/input/ s3://BUCKET/noaa-ghcn/output/monthly-prcp

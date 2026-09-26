@@ -1,0 +1,8 @@
+D:\PERS\MAESTRIA\CLASES\INFRA_BIG_DATA\LAB_EMR_AWS\my-wordcount-hadoop\map-reduce-ghcn\src\main\java\pe\edu\mapreduce\AnnualMaximumTemperatureJob.java
+D:\PERS\MAESTRIA\CLASES\INFRA_BIG_DATA\LAB_EMR_AWS\my-wordcount-hadoop\map-reduce-ghcn\src\main\java\pe\edu\mapreduce\AverageTmaxJob.java
+D:\PERS\MAESTRIA\CLASES\INFRA_BIG_DATA\LAB_EMR_AWS\my-wordcount-hadoop\map-reduce-ghcn\src\main\java\pe\edu\mapreduce\GHCNDCounters.java
+D:\PERS\MAESTRIA\CLASES\INFRA_BIG_DATA\LAB_EMR_AWS\my-wordcount-hadoop\map-reduce-ghcn\src\main\java\pe\edu\mapreduce\GHCNDDriver.java
+D:\PERS\MAESTRIA\CLASES\INFRA_BIG_DATA\LAB_EMR_AWS\my-wordcount-hadoop\map-reduce-ghcn\src\main\java\pe\edu\mapreduce\GHCNDRecord.java
+D:\PERS\MAESTRIA\CLASES\INFRA_BIG_DATA\LAB_EMR_AWS\my-wordcount-hadoop\map-reduce-ghcn\src\main\java\pe\edu\mapreduce\MonthlyPrecipitationJob.java
+D:\PERS\MAESTRIA\CLASES\INFRA_BIG_DATA\LAB_EMR_AWS\my-wordcount-hadoop\map-reduce-ghcn\src\main\java\pe\edu\mapreduce\SumCountWritable.java
+D:\PERS\MAESTRIA\CLASES\INFRA_BIG_DATA\LAB_EMR_AWS\my-wordcount-hadoop\map-reduce-ghcn\src\main\java\pe\edu\mapreduce\TemperatureRecordWritable.java
