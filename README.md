@@ -49,13 +49,28 @@ Primary. Verifica que el comando ejecute esa copia actualizada. El log
 entrada no cambia. Usa una ruta de salida nueva para cada ejecución.
 
 ```bash
-hadoop jar target/ghcnd-mapreduce-1.0.0.jar avg-tmax s3://dataset-ghcn-2/input/ s3://dataset-ghcn-2/output/avg-tmax
+hadoop jar target/ghcnd-mapreduce-1.0.0.jar \
+  -Dmapreduce.input.fileinputformat.split.maxsize=134217728 \
+  avg-tmax \
+  s3://dataset-ghcn/input/ \
+  s3://dataset-ghcn/output/avg-tmax_01
 
-hadoop jar target/ghcnd-mapreduce-1.0.0.jar -Dmapreduce.input.fileinputformat.split.maxsize=134217728 avg-tmax s3://dataset-ghcn/input/ s3://dataset-ghcn/output/avg-tmax
+hadoop jar target/ghcnd-mapreduce-1.0.0.jar \
+  -Dmapreduce.input.fileinputformat.split.maxsize=134217728 \
+  -Dmapreduce.map.memory.mb=2048 \
+  -Dmapreduce.map.java.opts=-Xmx1536m \
+  monthly-prcp \
+  s3://dataset-ghcn/input/ \
+  s3://dataset-ghcn/output/monthly-prcp_2
 
-hadoop jar target/ghcnd-mapreduce-1.0.0.jar monthly-prcp s3://dataset-ghcn/input/ s3://dataset-ghcn/output/monthly-prcp_1
+hadoop jar ./ghcnd-mapreduce-1.0.0.jar \
+  -Dmapreduce.input.fileinputformat.split.maxsize=134217728 \
+  -Dmapreduce.map.memory.mb=2048 \
+  -Dmapreduce.map.java.opts=-Xmx1536m \
+  annual-max \
+  s3://dataset-ghcn/input/ \
+  s3://dataset-ghcn/output/annual-max_01
 
-hadoop jar target/ghcnd-mapreduce-1.0.0.jar annual-max s3://dataset-ghcn/input/ s3://dataset-ghcn/output/annual-max_1
 ```
 
 Hadoop exige que el directorio de salida no exista. El script
